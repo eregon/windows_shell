@@ -6,4 +6,4 @@ install:
   - ruby --version
 build: off
 test_script:
-  - ruby -e "puts 'Hello, World!'"
+  - ruby test.rb

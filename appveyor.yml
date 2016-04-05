@@ -7,4 +7,4 @@ install:
 build: off
 test_script:
   - ruby test.rb
-  - ruby  -e "puts" | ruby -n -e 'm = Kernel.private_instance_methods(false).grep(/^chop$/); print m.map { |x| x.to_s }.join("")'
+  - ruby  -e "puts" | ruby -n -e "m = Kernel.private_instance_methods(false).grep(/^chop$/); print m.map { |x| x.to_s }.join('')"

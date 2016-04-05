@@ -7,5 +7,4 @@ install:
 build: off
 test_script:
   - ruby test.rb
-  - date /t
-  - echo | date /t
+  - ruby -U -e "p Encoding.default_internal; p Encoding.default_external"

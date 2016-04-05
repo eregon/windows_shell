@@ -3,5 +3,16 @@ def show(code)
   p eval(code)
 end
 
-require 'socket'
-puts Socket::Constants.constants
+io = IO.popen("date /t")
+begin
+  p io.read
+ensure
+  io.close
+end
+
+io = open("|date /t")
+begin
+  p io.read
+ensure
+  io.close
+end

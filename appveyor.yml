@@ -7,5 +7,3 @@ install:
 build: off
 test_script:
   - ruby test.rb
-  - ruby -e "p Encoding.default_internal; p Encoding.default_external"
-  - ruby -U -e "p Encoding.default_internal; p Encoding.default_external"

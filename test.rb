@@ -3,16 +3,7 @@ def show(code)
   p eval(code)
 end
 
-io = IO.popen("date /t")
-begin
-  p io.read
-ensure
-  io.close
-end
+path = "abc.txt"
+File.new(path, "w").close
 
-io = open("|date /t")
-begin
-  p io.read
-ensure
-  io.close
-end
+show "t=Time.now-10; File.utime(t,t,#{path.inspect})"

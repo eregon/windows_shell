@@ -3,6 +3,10 @@ def show(code)
   p eval(code)
 end
 
-show "system('does_not_exist', err: File::NULL)"
+require 'resolv'
 
-show "system('does_not_exist', err: 'NUL')"
+show 'p Resolv.getaddress "www.ruby-lang.org"'
+
+show 'p Resolv.getaddress "localhost"'
+
+

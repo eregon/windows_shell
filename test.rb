@@ -3,7 +3,6 @@ def show(code)
   p eval(code)
 end
 
-path = "abc.txt"
-File.new(path, "w").close
+show "system('does_not_exist', err: File::NULL)"
 
-show "t=Time.now-10; File.utime(t,t,#{path.inspect})"
+show "system('does_not_exist', err: 'NUL')"

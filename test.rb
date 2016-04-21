@@ -3,10 +3,13 @@ def show(code)
   p eval(code)
 end
 
-require 'resolv'
+# New file
+File.open("abc", "w", 0666) { |f|
+  puts f.stat.mode.to_s(8)
+}
 
-show 'p Resolv.getaddress "www.ruby-lang.org"'
-
-show 'p Resolv.getaddress "localhost"'
-
+# File exists
+File.open("abc", "w", 0466) { |f|
+  puts f.stat.mode.to_s(8)
+}
 

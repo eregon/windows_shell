@@ -3,8 +3,9 @@ def show(code)
   p eval(code)
 end
 
-File.open("abc", "wb") { |f|
-  f.write "a\r\n"
+File.open("abc", "wt", newline: :lf) { |f|
+  f.write "a\n"
+  f.puts "b"
 }
 
 File.open("abc", "rb") { |f| p f.read }
@@ -13,7 +14,7 @@ p File.binread("abc")
 
 puts
 
-File.open("abc", "wt", newline: :crlf) { |f|
+File.open("abc", "w", newline: :lf) { |f|
   f.write "a\n"
   f.puts "b"
 }

@@ -3,12 +3,14 @@ def show(code)
   p eval(code)
 end
 
-# New file
-File.open("abc", "w", 0444) { |f|
-  puts f.stat.mode.to_s(8)
+File.open("abc", "wb") { |f|
+  f.write "a\r\n"
 }
 
-# File exists
-File.open("abc", "w", 0666) { |f|
-  puts f.stat.mode.to_s(8)
+File.open("abc", "rb") { |f|
+  p f.read
 }
+
+p File.read("abc")
+
+p File.binread("abc")

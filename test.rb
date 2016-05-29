@@ -13,7 +13,7 @@ p File.binread("abc")
 
 puts
 
-File.open("abc", "wb", newline: :crlf) { |f|
+File.open("abc", "wt", newline: :crlf) { |f|
   f.write "a\n"
   f.puts "b"
 }

@@ -2,7 +2,7 @@
 version: "{build}"
 clone_depth: 1
 install:
-  - SET PATH=C:\Ruby22\bin;%PATH%
+  - SET PATH=C:\Ruby23\bin;%PATH%
   - ruby --version
 build: off
 test_script:

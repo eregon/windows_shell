@@ -3,15 +3,8 @@ def show(code)
   p eval(code)
 end
 
-Dir.mkdir("foo")
-D = "foo"
-
-File.write "foo/bar", "baz"
-
-p D
-show "File.zero?(D)"
-show "File.stat(D).zero?"
-show "File.lstat(D).zero?"
-show "FileTest.zero?(D)"
-
-Dir.rmdir D
+# "\x00\x00\x43\x21"
+show "[0x0000_4321].pack('L<_').bytes"
+show "[0x0000_4321].pack('L_<').bytes"
+show "[0x0000_4321].pack('L<!').bytes"
+show "[0x0000_4321].pack('L!<').bytes"

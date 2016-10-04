@@ -8,3 +8,8 @@ show "[0x0000_4321].pack('L<_').bytes"
 show "[0x0000_4321].pack('L_<').bytes"
 show "[0x0000_4321].pack('L<!').bytes"
 show "[0x0000_4321].pack('L!<').bytes"
+
+show "(1 << 29).class"
+show "(1 << 61).class"
+
+show "1.size"

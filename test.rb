@@ -3,6 +3,5 @@ def show(code)
   p eval(code)
 end
 
-show "File.basename('a')"
-show "File.basename('a/b')"
-show "File.basename('a.')"
+show "RbConfig::CONFIG['host_os']"
+show "RUBY_PLATFORM"

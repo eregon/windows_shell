@@ -1,4 +1,6 @@
 def show(code)
+  sleep 0.01
+  puts
   puts code
   p eval(code)
 end

@@ -8,6 +8,14 @@ end
 show "RbConfig::CONFIG['host_os']"
 show "RUBY_PLATFORM"
 
+show "`which cat`"
+
+ENV["PATH"].split(File::PATH_SEPARATOR).each { |dir|
+  if File.exist?("#{dir}/cat")
+    p "#{dir}/cat"
+  end
+}
+
 ENV["FOO"] = "BAR"
 
 show 'Process.wait Process.spawn("echo $FOO")'

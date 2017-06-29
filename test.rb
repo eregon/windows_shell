@@ -8,16 +8,17 @@ end
 show "RbConfig::CONFIG['host_os']"
 show "RUBY_PLATFORM"
 
-show "`which cat`"
+def search(binary)
+  show "`which #{binary}`"
 
-ENV["PATH"].split(File::PATH_SEPARATOR).each { |dir|
-  if File.exist?("#{dir}/cat")
-    p "#{dir}/cat"
-  end
-}
+  ENV["PATH"].split(File::PATH_SEPARATOR).each { |dir|
+    file = "#{dir}/#{binary}"
+    if File.exist?(file)
+      p file
+    end
+  }
+end
 
-ENV["FOO"] = "BAR"
-
-show 'Process.wait Process.spawn("echo $FOO")'
-show 'Process.wait Process.spawn("echo %FOO%")'
-show 'Process.wait Process.spawn("echo", "%FOO%")'
+search("cat")
+search("true")
+search("false")

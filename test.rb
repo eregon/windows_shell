@@ -22,3 +22,10 @@ end
 search("cat")
 search("true")
 search("false")
+search("exit")
+
+show('Process.wait spawn("exit 0"); $?')
+show('Process.wait spawn("exit 1"); $?')
+
+show('Process.wait spawn("echo $SHELL")')
+

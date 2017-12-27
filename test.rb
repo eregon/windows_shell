@@ -8,24 +8,8 @@ end
 show "RbConfig::CONFIG['host_os']"
 show "RUBY_PLATFORM"
 
-def search(binary)
-  show "`which #{binary}`"
+show "1.size"
+show "(1<<34).size"
 
-  ENV["PATH"].split(File::PATH_SEPARATOR).each { |dir|
-    file = "#{dir}/#{binary}"
-    if File.exist?(file)
-      p file
-    end
-  }
-end
-
-search("cat")
-search("true")
-search("false")
-search("exit")
-
-show('Process.wait spawn("exit 0"); $?')
-show('Process.wait spawn("exit 1"); $?')
-
-show('Process.wait spawn("echo $SHELL")')
-
+require 'rbconfig/sizeof'
+show "RbConfig::SIZEOF"

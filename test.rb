@@ -11,5 +11,4 @@ show "RUBY_PLATFORM"
 show "1.size"
 show "(1<<34).size"
 
-require 'rbconfig/sizeof'
-show "RbConfig::SIZEOF"
+p eval("(Rational(1, 2)).hash.to_s")

@@ -11,4 +11,4 @@ show "RUBY_PLATFORM"
 show "1.size"
 show "(1<<34).size"
 
-p eval("(Rational(1, 2)).hash.to_s")
+p eval("(Complex(1, 2)).hash.to_s")

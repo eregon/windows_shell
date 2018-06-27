@@ -8,6 +8,9 @@ end
 show "RbConfig::CONFIG['host_os']"
 show "RUBY_PLATFORM"
 
+show "File::SEPARATOR"
+show "File::PATH_SEPARATOR"
+
 puts
 ENV["RUBYLIB"] = "a:b"
 puts `ruby -e 'puts $:'`

@@ -8,7 +8,18 @@ end
 show "RbConfig::CONFIG['host_os']"
 show "RUBY_PLATFORM"
 
-show "1.size"
-show "(1<<34).size"
+puts
+ENV["RUBYLIB"] = "a:b"
+puts `ruby -e 'puts $:'`
 
-p eval("(Complex(1, 2)).hash.to_s")
+puts
+ENV["RUBYLIB"] = "#{Dir.pwd}/a:#{Dir.pwd}/b"
+puts `ruby -e 'puts $:'`
+
+puts
+ENV["RUBYLIB"] = "a;b"
+puts `ruby -e 'puts $:'`
+
+puts
+ENV["RUBYLIB"] = "#{Dir.pwd}/a;#{Dir.pwd}/b"
+puts `ruby -e 'puts $:'`

@@ -11,18 +11,6 @@ show "RUBY_PLATFORM"
 show "File::SEPARATOR"
 show "File::PATH_SEPARATOR"
 
-puts
-ENV["RUBYLIB"] = "a:b"
-puts `ruby -e 'puts $:'`
-
-puts
-ENV["RUBYLIB"] = "#{Dir.pwd}/a:#{Dir.pwd}/b"
-puts `ruby -e 'puts $:'`
-
-puts
-ENV["RUBYLIB"] = "a;b"
-puts `ruby -e 'puts $:'`
-
-puts
-ENV["RUBYLIB"] = "#{Dir.pwd}/a;#{Dir.pwd}/b"
-puts `ruby -e 'puts $:'`
+require 'socket'
+show "Socket.const_defined?(:AF_UNIX)"
+show "Socket::AF_UNIX"

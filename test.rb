@@ -12,5 +12,5 @@ show "File::SEPARATOR"
 show "File::PATH_SEPARATOR"
 
 require 'socket'
-show "Socket.const_defined?(:AF_UNIX)"
-show "Socket::AF_UNIX"
+show "Socket.const_defined?(:SOCK_PACKET)"
+show "Socket::SOCK_PACKET"
